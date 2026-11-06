@@ -9,25 +9,25 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Say hello
-                run: echo "Hello from GitHub Actions"
+              run: echo "Hello from GitHub Actions"
             - name: Expressions (resolved BEFORE the shell runs)
-                run: |
+              run: |
                     echo "actor: ${{ github.actor }}"
                     echo "ref_name: ${{ github.ref_name }}"
                     echo "sha: ${{ github.sha }}"
                     echo "event_name: ${{ github.event_name }}"
             - name: Env vars (read BY the shell)
-                run: |
+              run: |
                     echo "actor: $GITHUB_ACTOR"
                     echo "ref_name: $GITHUB_REF_NAME"
                     echo "sha: $GITHUB_SHA"
                     echo "event_name: $GITHUB_EVENT_NAME"
             - name: Workspace before checkout
-                run: ls -la
+              run: ls -la
 
             - name: Checkout
-                uses: actions/checkout@v4
+              uses: actions/checkout@v4
             - name: Workspace after checkout
-                run: ls -la
+              run: ls -la
             - name: Job summary
-                run: echo "### Hello from **${{ github.ref_name }}** :rocket:" >> "$GITHUB_STEP_SUMMARY"
+              run: echo "### Hello from **${{ github.ref_name }}** :rocket:" >> "$GITHUB_STEP_SUMMARY"
