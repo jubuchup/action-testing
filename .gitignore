@@ -1,0 +1,14 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+dist/
+
+# Pipeline outputs (produced locally and in CI, never committed)
+data/
+site/
+
+# macOS
+.DS_Store
